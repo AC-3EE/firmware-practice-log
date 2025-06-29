@@ -32,6 +32,12 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
+// --- Project-specific Defines ---
+// 使用 #define 可提高程式可讀性與可維護性，避免在程式碼中使用「魔術數字」。
+#define USER_LED_PORT   GPIOA         // 使用者 LED 連接的 GPIO Port
+#define USER_LED_PIN    GPIO_PIN_5    // 使用者 LED 連接的 GPIO Pin
+#define BLINK_DELAY_MS  500           // LED 閃爍的間隔時間 (毫秒)
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -56,6 +62,13 @@ static void MX_USART2_UART_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+/**
+ * @brief  [這是我的客製化說明]
+ * 此專案透過暫存器直接操作 PA5，實現 LED 閃爍。
+ * 目的是為了對比 HAL 函式庫與直接操作暫存器之間的差異。
+ * @note   此註解被放置在 USER CODE 0 區塊，以防止被自動產生器覆蓋。
+ */
 
 /* USER CODE END 0 */
 
@@ -99,11 +112,13 @@ int main(void)
   {
     /* USER CODE END WHILE */
 
-        // LED 每隔 500 ms 閃爍一次
-        HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
-        HAL_Delay(500);
-    
     /* USER CODE BEGIN 3 */
+    // 翻轉 User LED (LD2) 的狀態，使其亮滅交替。
+    HAL_GPIO_TogglePin(USER_LED_PORT, USER_LED_PIN);
+
+    // 執行一個阻塞式延遲。
+    // 注意：在延遲期間，CPU 將無法執行任何其他任務。
+    HAL_Delay(BLINK_DELAY_MS);
   }
   /* USER CODE END 3 */
 }
@@ -207,7 +222,7 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(My_LED_GPIO_Port, My_LED_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : B1_Pin */
   GPIO_InitStruct.Pin = B1_Pin;
@@ -215,12 +230,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(B1_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : PA5 */
-  GPIO_InitStruct.Pin = GPIO_PIN_5;
+  /*Configure GPIO pin : My_LED_Pin */
+  GPIO_InitStruct.Pin = My_LED_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+  HAL_GPIO_Init(My_LED_GPIO_Port, &GPIO_InitStruct);
 
   /* USER CODE BEGIN MX_GPIO_Init_2 */
 
