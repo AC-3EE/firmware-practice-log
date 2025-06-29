@@ -86,3 +86,23 @@ dkms.conf
 *.swp
 *.swo
 *.dep
+
+
+
+
+# 忽略 Eclipse / STM32CubeIDE metadata
+.metadata/
+
+# 忽略 Eclipse 配置文件
+*.log
+*.launch
+
+# 忽略 STM32CubeIDE 生成的 build 目录
+/Debug/
+/Release/
+/.settings/
+
+# 通用忽略
+*.swp
+*.swo
+*.dep
