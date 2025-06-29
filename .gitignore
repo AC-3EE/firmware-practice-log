@@ -1,116 +1,47 @@
-# Prerequisites
-*.d
+# ---------
+# STM32CubeIDE / Eclipse 配置文件
+# ---------
+.cproject
+.project
+.mxproject
+.settings/
+.metadata/
+*.launch
+*.log
 
-# Object files
+# ---------
+# CubeIDE / GCC 编译输出
+# ---------
+/Debug/
+/Release/
+/build/
 *.o
-*.ko
-*.obj
+*.d
+*.dep
 *.elf
-
-# Linker output
-*.ilk
+*.bin
+*.hex
 *.map
-*.exp
+*.lst
+*.list
+*.su
+*.swo
+*.swp
 
-# Precompiled Headers
-*.gch
-*.pch
+# ---------
+# Windows / macOS 系统文件
+# ---------
+Thumbs.db
+.DS_Store
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
+# ---------
+# 一般可执行文件
+# ---------
 *.exe
 *.out
 *.app
-*.i*86
-*.x86_64
-*.hex
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
-
-# debug information files
-*.dwo
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# STM32CubeIDE generated folders
-/Debug/
-/Release/
-/.settings/
-
-# Miscellaneous
-*.launch
-*.bin
-*.hex
-*.elf
-*.map
-*.list
-*.o
-*.d
-*.log
-*.swp
-*.swo
-*.dep
-
-
-
-
-# 忽略 Eclipse / STM32CubeIDE metadata
-.metadata/
-
-# 忽略 Eclipse 配置文件
-*.log
-*.launch
-
-# 忽略 STM32CubeIDE 生成的 build 目录
-/Debug/
-/Release/
-/.settings/
-
-# 通用忽略
-*.swp
-*.swo
-*.dep
-
-
-# STM32CubeIDE project config files
-*.cproject
-*.project
-*.mxproject
-*.ioc
-.settings/
+# ---------
+# 如果希望让其他人能直接导入工程，保留 .ioc
+# 如果不需要，可以取消注释下面一行
+# *.ioc
