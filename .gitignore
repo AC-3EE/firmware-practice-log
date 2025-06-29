@@ -1,5 +1,5 @@
 # ---------
-# STM32CubeIDE / Eclipse 配置文件
+# STM32CubeIDE / Eclipse 配置檔案
 # ---------
 .cproject
 .project
@@ -10,7 +10,7 @@
 *.log
 
 # ---------
-# CubeIDE / GCC 编译输出
+# CubeIDE / GCC 編譯輸出
 # ---------
 /Debug/
 /Release/
@@ -29,19 +29,19 @@
 *.swp
 
 # ---------
-# Windows / macOS 系统文件
+# Windows / macOS 系统檔案
 # ---------
 Thumbs.db
 .DS_Store
 
 # ---------
-# 一般可执行文件
+# 一般可執行檔案
 # ---------
 *.exe
 *.out
 *.app
 
 # ---------
-# 如果希望让其他人能直接导入工程，保留 .ioc
-# 如果不需要，可以取消注释下面一行
+# 如果希望讓其他人能直接導入，保留 .ioc
+# 如果不需要，可以取消註解下面一行
 # *.ioc
