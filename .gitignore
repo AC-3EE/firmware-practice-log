@@ -106,3 +106,11 @@ dkms.conf
 *.swp
 *.swo
 *.dep
+
+
+# STM32CubeIDE project config files
+*.cproject
+*.project
+*.mxproject
+*.ioc
+.settings/
