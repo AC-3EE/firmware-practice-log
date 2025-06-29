@@ -1,19 +1,19 @@
 # 專案名稱 (Project Title)
-> 例如：使用 HAL 函式庫控制 LED 閃爍
 
-一個簡短的副標題，一句話總結這個專案的核心功能。
-> 例如：透過 HAL_Delay 和 HAL_GPIO_TogglePin 實現 LED 的週期性亮滅。
+使用 HAL 函式庫控制 LED 閃爍
+
+> 例如：本專案透過 HAL_Delay 和 HAL_GPIO_TogglePin 實現 LED 的週期性亮滅。
 
 ---
 
 ### 專案目標 (Goal)
-這個專案是為了解決什麼問題，或是學習/驗證哪個技術點？
+
 * **學習目標 1:** 熟悉 STM32CubeIDE 開發環境與 HAL 函式庫的基本用法。
 * **學習目標 2:** 了解如何設定 GPIO 為輸出模式。
 * **驗證目標:** 實現一個最基礎的「Hello, World」級別嵌入式程式，確保開發環境與硬體正常運作。
 
 ### 開發環境與硬體 (Environment & Hardware)
-列出重現這個專案所需要的軟硬體。
+
 * **MCU:** STMicroelectronics STM32F446RE
 * **開發板 (Board):** Nucleo-F446RE
 * **開發工具 (IDE):** STM32CubeIDE v1.18.1
@@ -21,18 +21,18 @@
     * `PA5`: 連接至開發板上的綠色 LED (LD2)。無需額外接線。
 
 ### 核心概念與程式邏輯 (Key Concepts & Logic)
-說明專案背後的原理，以及程式碼的運作流程。
+
 1.  **初始化 (Initialization):**
-    * [cite_start]程式首先呼叫 `HAL_Init()` 來初始化 HAL 函式庫、Flash 介面和 Systick 計時器 [cite: 1]。
-    * [cite_start]接著透過 `SystemClock_Config()` 設定系統時脈 [cite: 1]。
-    * [cite_start]最後，`MX_GPIO_Init()` 將 `PA5` 腳位設定為推挽輸出模式 (Output Push-Pull) [cite: 1]。
+    * 程式首先呼叫 `HAL_Init()` 來初始化 HAL 函式庫、Flash 介面和 Systick 計時器。
+    * 接著透過 `SystemClock_Config()` 設定系統時脈。
+    * 最後，`MX_GPIO_Init()` 將 `PA5` 腳位設定為推挽輸出模式 (Output Push-Pull)。
 2.  **主迴圈 (Main Loop):**
-    * [cite_start]在 `while(1)` 的無窮迴圈中，程式反覆執行兩個主要操作 [cite: 1]。
-    * [cite_start]`HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5)`: 翻轉 `PA5` 腳位的電位狀態（高電位 -> 低電位，或反之），從而點亮或熄滅 LED [cite: 1]。
-    * [cite_start]`HAL_Delay(500)`: 執行一個 500 毫秒的阻塞式延遲 [cite: 1]。這會暫停程式執行，直到延遲時間結束。
+    * 在 `while(1)` 的無窮迴圈中，程式反覆執行兩個主要操作。
+    * `HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5)`: 翻轉 `PA5` 腳位的電位狀態（高電位 -> 低電位，或反之），從而點亮或熄滅 LED。
+    * `HAL_Delay(500)`: 執行一個 500 毫秒的阻塞式延遲。這會暫停程式執行，直到延遲時間結束。
 
 ### 如何編譯與執行 (How to Build & Run)
-提供給其他人（或未來的自己）的具體操作步驟。
+
 1.  使用 STM32CubeIDE 匯入此專案。
 2.  點擊 `Build` 按鈕 (槌子圖示) 編譯專案。
 3.  將開發板透過 USB 連接至電腦。
@@ -40,10 +40,10 @@
 5.  觀察開發板上的綠色 LED (LD2) 是否以 1Hz 的頻率閃爍（亮 0.5 秒，滅 0.5 秒）。
 
 ### 成果展示 (Showcase)
-(這是最能吸引眼球的部分！)
-[在這裡插入一個 GIF 動圖，展示 LED 閃爍的實際效果]
+
+![LED閃爍](../../doc/phase1_led_register_control.gif)
 
 ### 心得與反思 (Learnings & Reflections)
-這部分可以展現您的思考深度。
+
 * **阻塞式延遲的缺點:** `HAL_Delay()` 雖然簡單易用，但它是「阻塞式 (Blocking)」的。在 500ms 的延遲期間，CPU 不能做任何其他事情。在更複雜的應用中（例如需要同時監聽按鍵），這種作法會導致系統反應遲鈍。
 * **未來改進:** 可以改用 Systick 中斷或 Timer 中斷來實現非阻塞式 (Non-blocking) 的延遲，讓 CPU 在等待期間可以去處理其他任務。
