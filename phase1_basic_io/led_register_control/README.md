@@ -2,7 +2,7 @@
 
 使用 HAL 函式庫控制 LED 閃爍
 
-> 例如：本專案透過 HAL_Delay 和 HAL_GPIO_TogglePin 實現 LED 的週期性亮滅。
+> 本專案透過 `HAL_Delay` 和 `HAL_GPIO_TogglePin` 實現 LED 的週期性亮滅。
 
 ---
 
