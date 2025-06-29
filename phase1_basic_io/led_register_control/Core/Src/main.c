@@ -98,8 +98,11 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+
+        // LED 每隔 500 ms 閃爍一次
         HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
         HAL_Delay(500);
+    
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
