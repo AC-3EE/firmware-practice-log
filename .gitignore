@@ -53,3 +53,36 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# STM32CubeIDE generated folders
+/Debug/
+/Release/
+/.settings/
+
+# Miscellaneous
+*.launch
+*.bin
+*.hex
+*.elf
+*.map
+*.list
+*.o
+*.d
+*.log
+*.swp
+*.swo
+*.dep
