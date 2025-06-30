@@ -65,8 +65,7 @@ static void MX_USART2_UART_Init(void);
 
 /**
  * @brief  [這是我的客製化說明]
- * 此專案透過暫存器直接操作 PA5，實現 LED 閃爍。
- * 目的是為了對比 HAL 函式庫與直接操作暫存器之間的差異。
+ * 此專案透過 HAL 函式庫 實現 LED 閃爍，目的是熟悉 HAL 的基本 API 用法。
  * @note   此註解被放置在 USER CODE 0 區塊，以防止被自動產生器覆蓋。
  */
 
