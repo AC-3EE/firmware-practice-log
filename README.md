@@ -6,17 +6,25 @@
 
 透過分階段練習 MCU 各項周邊、通訊介面與 RTOS 整合，累積可重用的模組化程式碼庫，並逐步建立一個可在 STM32 上運作的完整系統。
 
-## 階段列表
+## 硬體需求
 
+本專案所需的所有硬體元件、模組與注意事項，請參考 [物料清單 (Bill of Materials)](./BOM.md)。
+
+## 學習路徑 (Learning Roadmap)
+
+### 第一部分：核心硬體周邊操作 (Core Peripheral Mastery)
 - [phase1_basic_io](./phase1_basic_io/README.md)：GPIO 操作、按鍵偵測、LED 控制
-
 - [phase2_uart_ringbuffer](./phase2_uart_ringbuffer/README.md)：UART 雙向通訊 + Ring Buffer
+- [phase3_pwm_servo_control](./phase3_pwm_servo_control/README.md)：Timer PWM 輸出、伺服馬達控制
+- [phase4_i2c_oled_sensor](./phase4_i2c_oled_sensor/README.md)：I2C 感測器讀取、OLED 顯示
+- [phase5_spi_flash_storage](./phase5_spi_flash_storage/README.md)：SPI Nor Flash 底層讀寫
 
-- [phase3_i2c_oled_sensor](./phase3_i2c_oled_sensor/README.md)：I2C 溫度感測器讀取、OLED 顯示
+### 第二部分：系統與軟體層整合 (System & Software Integration)
+- [phase6_spi_sdcard_fatfs](./phase6_spi_sdcard_fatfs/README.md)：SPI MicroSD 讀寫、FATFS 檔案系統移植
+- [phase7_freertos_integration](./phase7_freertos_integration/README.md)：導入 FreeRTOS、多任務設計
 
-- [phase4_spi_sdcard_fatfs](./phase4_spi_sdcard_fatfs/README.md)：SPI MicroSD 讀寫、FATFS 檔案系統
-
-- [phase5_freertos_integration](./phase5_freertos_integration/README.md)：導入 FreeRTOS、多任務整合
+### 第三部分：進階應用與總結 (Advanced Application)
+- [phase8_canbus_communication](./phase8_canbus_communication/README.md)：CAN Bus 網路建構、雙節點資料交換
 
 >📚 詳細說明
 >每個階段資料夾內含程式碼、測試結果、以及對應的 `README.md` 紀錄具體功能與開發筆記。
