@@ -1,8 +1,8 @@
-# 專案名稱 (Project Title)
+# STM32 HAL LED 閃爍練習
 
-使用 HAL 函式庫控制 LED 閃爍
+本專案示範如何使用 STM32 HAL 函式庫，透過 `HAL_Delay` 與 `HAL_GPIO_TogglePin` 控制 LED 週期性閃爍。
 
-> 本專案透過 `HAL_Delay` 和 `HAL_GPIO_TogglePin` 實現 LED 的週期性亮滅。
+> 本專案目的是熟悉 STM32CubeIDE 開發環境與 HAL API 的基本使用方法。
 
 ---
 
